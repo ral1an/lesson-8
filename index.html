@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function clonForEach(arr, funcCallback) {
+            for (let i = 0; i < arr.length; i++) {
+                funcCallback(arr[i], i, arr);
+            }
+        }
+
+
+    function cloneMap(arr, funcCallback){
+        let arrNew = new arr(arr.length);
+            for (let i = 0; i < arr.length; i++) {
+                arrNew[i] = funcCallback(arr[i], i, arr);
+            }
+        return arrNew;
+    }
+
+    
+    function cloneFilter(arr, funcCallback){
+        let newArr = [];
+            for (let i = 0; i < arr.lenght; i++){
+                let result = funcCallback(arr[i], i , arr);
+                if (result){
+                    newArr.push(arr[i]);
+                }
+            }
+        return newArr;
+    }
+
+    </script>
+</body>
+</html>
